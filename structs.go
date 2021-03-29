@@ -76,7 +76,7 @@ type Block struct {
 type Transaction struct {
 	Hash     Hash
 	From     Address
-	To       Address
+	To       *Address
 	Input    []byte
 	GasPrice uint64
 	Gas      uint64

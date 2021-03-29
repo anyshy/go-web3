@@ -175,9 +175,10 @@ func (t *TestServer) HTTPAddr() string {
 
 // ProcessBlock processes a new block
 func (t *TestServer) ProcessBlock() error {
+	addr := web3.HexToAddress(dummyAddr)
 	_, err := t.SendTxn(&web3.Transaction{
 		From:  t.accounts[0],
-		To:    web3.HexToAddress(dummyAddr),
+		To:    &addr,
 		Value: big.NewInt(10),
 	})
 	return err
@@ -205,7 +206,7 @@ func (t *TestServer) Call(msg *web3.CallMsg) (string, error) {
 func (t *TestServer) TxnTo(address web3.Address, method string) *web3.Receipt {
 	sig := MethodSig(method)
 	receipt, err := t.SendTxn(&web3.Transaction{
-		To:    address,
+		To:    &address,
 		Input: sig,
 	})
 	if err != nil {
