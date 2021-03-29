@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/umbracle/go-web3"
-	"github.com/umbracle/go-web3/compiler"
+	"github.com/anyshy/go-web3"
+	"github.com/anyshy/go-web3/compiler"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -177,7 +177,7 @@ func (t *TestServer) HTTPAddr() string {
 func (t *TestServer) ProcessBlock() error {
 	_, err := t.SendTxn(&web3.Transaction{
 		From:  t.accounts[0],
-		To:    dummyAddr,
+		To:    web3.HexToAddress(dummyAddr),
 		Value: big.NewInt(10),
 	})
 	return err
@@ -205,7 +205,7 @@ func (t *TestServer) Call(msg *web3.CallMsg) (string, error) {
 func (t *TestServer) TxnTo(address web3.Address, method string) *web3.Receipt {
 	sig := MethodSig(method)
 	receipt, err := t.SendTxn(&web3.Transaction{
-		To:    address.String(),
+		To:    address,
 		Input: sig,
 	})
 	if err != nil {

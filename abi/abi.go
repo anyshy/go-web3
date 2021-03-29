@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/umbracle/go-web3"
+	"github.com/anyshy/go-web3"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -94,7 +94,7 @@ func (a *ABI) UnmarshalJSON(data []byte) error {
 			}
 
 		case "fallback":
-		case "receive":	
+		case "receive":
 			// do nothing
 
 		default:

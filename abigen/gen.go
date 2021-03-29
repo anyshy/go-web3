@@ -9,8 +9,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/umbracle/go-web3/abi"
-	"github.com/umbracle/go-web3/compiler"
+	"github.com/anyshy/go-web3/abi"
+	"github.com/anyshy/go-web3/compiler"
 )
 
 type config struct {
@@ -174,9 +174,9 @@ import (
 	"fmt"
 	"math/big"
 
-	web3 "github.com/umbracle/go-web3"
-	"github.com/umbracle/go-web3/contract"
-	"github.com/umbracle/go-web3/jsonrpc"
+	web3 "github.com/anyshy/go-web3"
+	"github.com/anyshy/go-web3/contract"
+	"github.com/anyshy/go-web3/jsonrpc"
 )
 
 var (
@@ -240,7 +240,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/umbracle/go-web3/abi"
+	"github.com/anyshy/go-web3/abi"
 )
 
 var abi{{.Name}} *abi.ABI

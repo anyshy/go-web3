@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/umbracle/go-web3"
-	"github.com/umbracle/go-web3/abi"
-	"github.com/umbracle/go-web3/jsonrpc"
+	"github.com/anyshy/go-web3"
+	"github.com/anyshy/go-web3/abi"
+	"github.com/anyshy/go-web3/jsonrpc"
 )
 
 // Contract is an Ethereum contract
@@ -191,7 +191,7 @@ func (t *Txn) Do() error {
 		Value:    t.value,
 	}
 	if t.addr != nil {
-		txn.To = t.addr.String()
+		txn.To = web3.HexToAddress(t.addr.String()) //.String()
 	}
 	t.hash, err = t.provider.Eth().SendTransaction(txn)
 	if err != nil {

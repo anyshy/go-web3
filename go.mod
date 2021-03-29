@@ -2,6 +2,8 @@ module github.com/anyshy/go-web3
 
 go 1.12
 
+//replace github.com/anyshy/go-web3 => ./
+
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
 	github.com/Microsoft/go-winio v0.4.13 // indirect
@@ -24,6 +26,7 @@ require (
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/opencontainers/runc v0.1.1 // indirect
 	github.com/ory/dockertest v3.3.5+incompatible
+	github.com/shopspring/decimal v1.2.0
 	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/stretchr/testify v1.4.0
 	github.com/valyala/fasthttp v1.4.0

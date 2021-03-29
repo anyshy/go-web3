@@ -121,6 +121,9 @@ func (t *Transaction) unmarshalJSON(v *fastjson.Value) error {
 	if err = decodeAddr(&t.From, v, "from"); err != nil {
 		return err
 	}
+	if err = decodeAddr(&t.To, v, "to"); err != nil {
+		return err
+	}
 	if t.GasPrice, err = decodeUint(v, "gasPrice"); err != nil {
 		return err
 	}
@@ -173,6 +176,10 @@ func (r *Receipt) UnmarshalJSON(buf []byte) error {
 		return err
 	}
 	if r.LogsBloom, err = decodeBytes(r.LogsBloom[:0], v, "logsBloom", 256); err != nil {
+		return err
+	}
+
+	if r.Status, err = decodeUint(v, "status"); err != nil {
 		return err
 	}
 

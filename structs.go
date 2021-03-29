@@ -76,7 +76,7 @@ type Block struct {
 type Transaction struct {
 	Hash     Hash
 	From     Address
-	To       string
+	To       Address
 	Input    []byte
 	GasPrice uint64
 	Gas      uint64
@@ -124,7 +124,7 @@ type Receipt struct {
 	CumulativeGasUsed uint64
 	LogsBloom         []byte
 	Logs              []*Log
-	Status            string
+	Status            uint64
 }
 
 type Log struct {

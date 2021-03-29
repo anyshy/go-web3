@@ -4,3 +4,4 @@ pkg/
 /.idea/go-web3.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+/vendor/

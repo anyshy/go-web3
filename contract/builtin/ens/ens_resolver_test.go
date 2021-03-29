@@ -4,10 +4,10 @@ import (
 	"encoding/hex"
 	"testing"
 
+	web3 "github.com/anyshy/go-web3"
+	"github.com/anyshy/go-web3/jsonrpc"
+	"github.com/anyshy/go-web3/testutil"
 	"github.com/stretchr/testify/assert"
-	web3 "github.com/umbracle/go-web3"
-	"github.com/umbracle/go-web3/jsonrpc"
-	"github.com/umbracle/go-web3/testutil"
 )
 
 var (

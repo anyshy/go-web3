@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/anyshy/go-web3"
+	"github.com/anyshy/go-web3/testutil"
 	"github.com/stretchr/testify/assert"
-	"github.com/umbracle/go-web3"
-	"github.com/umbracle/go-web3/testutil"
 )
 
 func TestTopicEncoding(t *testing.T) {

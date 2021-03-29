@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/umbracle/go-web3"
+	"github.com/anyshy/go-web3"
 )
 
 // ParseLog parses an event log

@@ -5,9 +5,9 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/anyshy/go-web3"
+	"github.com/anyshy/go-web3/testutil"
 	"github.com/stretchr/testify/assert"
-	"github.com/umbracle/go-web3"
-	"github.com/umbracle/go-web3/testutil"
 )
 
 var (
@@ -53,7 +53,7 @@ func TestEthGetBalance(t *testing.T) {
 	amount := big.NewInt(10)
 	txn := &web3.Transaction{
 		From:  s.Account(0),
-		To:    "0x015f68893a39b3ba0681584387670ff8b00f4db2",
+		To:    web3.HexToAddress("0x015f68893a39b3ba0681584387670ff8b00f4db2"),
 		Value: amount,
 	}
 	_, err = s.SendTxn(txn)
@@ -132,7 +132,7 @@ func TestEthSendTransaction(t *testing.T) {
 		From:     s.Account(0),
 		GasPrice: testutil.DefaultGasPrice,
 		Gas:      testutil.DefaultGasLimit,
-		To:       "0x015f68893a39b3ba0681584387670ff8b00f4db2",
+		To:       web3.HexToAddress("0x015f68893a39b3ba0681584387670ff8b00f4db2"),
 		Value:    big.NewInt(10),
 	}
 	hash, err := c.Eth().SendTransaction(txn)

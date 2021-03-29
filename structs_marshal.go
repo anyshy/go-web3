@@ -68,9 +68,10 @@ func (t *Transaction) MarshalJSON() ([]byte, error) {
 
 	o := a.NewObject()
 	o.Set("from", a.NewString(t.From.String()))
-	if t.To != "" {
-		o.Set("to", a.NewString(t.To))
-	}
+	o.Set("to", a.NewString(t.To.String()))
+	//if t.To != "" {
+	//	o.Set("to", a.NewString(t.To))
+	//}
 	if len(t.Input) != 0 {
 		o.Set("input", a.NewString("0x"+hex.EncodeToString(t.Input)))
 	}
